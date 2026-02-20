@@ -1,13 +1,26 @@
 # learning_before_understanding.py
-Sometimes I learn things before I understand them.
 
-I copy commands.
-I follow guides.
-I repeat steps.
-
-Understanding comes later, through mistakes and repetition.
-This repository reflects that process.
+# sometimes i learn things before i really understand them.
+# i copy commands.
+# i follow tutorials.
+# i run things and hope they work.
+# sometimes they break.
 
 class LearningProcess:
+    def __init__(self):
+        self.confused = True
+        self.attempts = 0
+
+    def try_again(self):
+        self.attempts += 1
+        if self.attempts > 3:
+            self.confused = False
+
     def learn(self):
-        pass
+        while self.confused:
+            self.try_again()
+        return "now it makes sense."
+
+if __name__ == "__main__":
+    lp = LearningProcess()
+    print(lp.learn())
